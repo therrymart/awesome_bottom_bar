@@ -13,6 +13,6 @@ class TabItem<T> {
     this.title,
     this.count,
     this.key,
-  }) : assert(icon is IconData || assetImage is AssetImage || icon is Widget,
+  }) : assert((icon is IconData || assetImage is AssetImage) || icon is Widget,
             'TabItem only support IconData and Widget');
 }
