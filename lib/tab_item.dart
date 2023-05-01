@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TabItem<T> {
-  final T? icon;
-  final T? assetImage;
+  final IconData? icon;
+  final AssetImage? assetImage;
   final String? title;
   final Widget? count;
   final String? key;
@@ -13,6 +13,5 @@ class TabItem<T> {
     this.title,
     this.count,
     this.key,
-  }) : assert((icon is IconData || assetImage is AssetImage) || icon is Widget,
-            'TabItem only support IconData and Widget');
+  }) : assert(assetImage != null || icon != null, 'TabItem cannot be null');
 }
